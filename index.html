@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Habit Tracker Pro</h1>
+            <p>Build better habits, one day at a time</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <div class="stat-info">
+                    <h3 id="totalCompletions">0</h3>
+                    <p>Total Completions</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-info">
+                    <h3 id="avgStreak">0</h3>
+                    <p>Avg Streak</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-info">
+                    <h3 id="todayProgress">0/0</h3>
+                    <p>Today's Progress</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-habit-section">
+            <input type="text" id="habitInput" placeholder="Enter new habit..." />
+            <button onclick="addHabit()">➕ Add Habit</button>
+        </div>
+
+        <div class="main-content">
+            <div class="habits-section">
+                <h2>Your Habits</h2>
+                <div id="habitsList" class="habits-list"></div>
+            </div>
+
+            <div class="charts-section">
+                <h2>Analytics</h2>
+                <div class="chart-container">
+                    <h3>Today's Progress</h3>
+                    <canvas id="doughnutChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>All Habits Overview</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart-container" id="lineChartContainer" style="display: none;">
+                    <h3 id="lineChartTitle">Habit Progress - Last 30 Days</h3>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
